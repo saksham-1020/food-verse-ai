@@ -1,3 +1,9 @@
+# Node dependencies and build
+node_modules/
+dist/
+dist-ssr/
+*.local
+
 # Python byte code and caches
 __pycache__/
 *.py[cod]
@@ -14,12 +20,9 @@ ENV/
 # Streamlit local state and secrets
 .streamlit/secrets.toml
 
-# IDE and OS files
-.vscode/
-.idea/
+# Logs and system artifacts
+*.log
 .DS_Store
 Thumbs.db
-
-# Test artifacts and logs
-*.log
-.pytest_cache/
+.vscode/
+.idea/

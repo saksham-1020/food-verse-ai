@@ -2,133 +2,98 @@
 
 **Skill Wallet Capstone Project 3 • Platform ID: `6ac4ca021dcde6d7857c169a`**  
 **Category:** Generative AI | Nutrition, Freshness & Commercial Kitchen Safety  
+**GitHub Repository:** [`sharky-123/food-verse-ai`](https://github.com/sharky-123/food-verse-ai)  
 
+[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel&logoColor=white)](https://vercel.com/new)
+[![React 18](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Tailwind-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Build-Vite%206-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.35+-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![Plotly](https://img.shields.io/badge/Visuals-Plotly-3F4F75?style=flat&logo=plotly&logoColor=white)](https://plotly.com)
-[![License](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
 ---
 
 ## 🌟 Executive Summary & Objective
 
-**Food Verse AI** is an enterprise-grade multimodal food intelligence ecosystem analyzing food images, kitchen video frames, and user dietary profiles to:
-1. **Recognize Dishes & Audit Nutrition:** Vision-based dish classification, ingredient decomposition, calorie/macronutrient breakdown, allergen alerts, and composite Health Scores (1–100).
-2. **Diagnose Freshness & Microbial Spoilage:** Surface texture inspection, oxidation browning, turgor loss, and mold spore detection with actionable safety directives (*Safe to consume*, *Consume within 24h*, *Discard immediately*).
-3. **Audit Commercial Kitchen Hygiene (HACCP):** CCTV inspection verifying chef attire (hairnets, food-grade gloves), countertop sanitation, and raw protein cross-contamination hazards with itemized violation logs.
-4. **Synthesize Zero-Waste Smart Recipes:** Transform pantry leftovers into chef-crafted meals with dynamic substitutions and cooking instructions.
-5. **Prescribe Adaptive Metabolic Meal Plans:** Scientific Mifflin-St Jeor BMR/TDEE calculation, goal-specific macro allocation, 7-day adaptive meal scheduling, and automated consolidated grocery carts.
+**Food Verse AI** is an enterprise-grade multimodal food intelligence ecosystem that deconstructs meal photos, inspects raw perishables, monitors commercial kitchen hygiene compliance (HACCP), generates zero-waste recipes, and prescribes metabolic meal plans.
 
----
+### 📋 Kanban Epics Traceability (100% Coverage)
 
-## 📋 Kanban Epics Traceability
-
-| Epic | Scope Description | Module Implementation | Verification Status |
+| Epic | Scope Description | Implementation | Status |
 | :--- | :--- | :--- | :--- |
-| **Pre-requisites** | FastAPI / React / OpenCV / Streamlit Foundation | `utils/cv_helpers.py`, `utils/data_contracts.py` | ✅ Verified (100%) |
-| **Epic 1** | Requirements & Secure Dual-Mode Env | `config.py`, `app.py` (Gemini, Groq, Standalone Demo) | ✅ Verified (100%) |
-| **Epic 2** | Food Recognition & Nutrition Breakdown | `modules/nutrition_audit.py`, `modules/ai_engine.py` | ✅ Verified (100%) |
-| **Epic 3** | Freshness & Spoilage Detection | `modules/freshness_diagnostic.py` (Heatmap overlays) | ✅ Verified (100%) |
-| **Epic 4** | Kitchen Hygiene Compliance & Recipe Coach | `modules/kitchen_hygiene.py`, `modules/recipe_assistant.py` | ✅ Verified (100%) |
-| **Epic 5** | TDEE Metabolic Meal Planner | `modules/meal_planner.py` (Mifflin-St Jeor Equations) | ✅ Verified (100%) |
-| **Epic 6** | Interface, Edge Cases & 1-Click Deployment | `app.py`, `assets/styles.css`, `requirements.txt` | ✅ Verified (100%) |
+| **Pre-requisites** | Modern React / Vite / Tailwind / CV Foundation | `src/`, `utils/cv_helpers.py` | ✅ Verified (100%) |
+| **Epic 1** | Requirements & Secure Dual-Mode Env (Gemini, Groq, Demo) | `src/services/aiService.js`, `SettingsModal.jsx` | ✅ Verified (100%) |
+| **Epic 2** | Food Recognition & Clinical Nutrition Audit | `src/components/TabNutritionAudit.jsx` | ✅ Verified (100%) |
+| **Epic 3** | Perishable Freshness & Spoilage Diagnostics (Heatmaps) | `src/components/TabFreshnessDiagnostic.jsx` | ✅ Verified (100%) |
+| **Epic 4** | Kitchen Hygiene Compliance (HACCP) & Recipe Assistant | `src/components/TabKitchenHygiene.jsx`, `TabRecipeAssistant.jsx` | ✅ Verified (100%) |
+| **Epic 5** | Mifflin-St Jeor TDEE & 7-Day Meal Calendar | `src/components/TabMealPlanner.jsx` | ✅ Verified (100%) |
+| **Epic 6** | Modern Interface, Edge Cases & Instant Vercel Deploy | `vercel.json`, `index.html`, `App.jsx` | ✅ Verified (100%) |
 
 ---
 
-## 🏗️ System Architecture
+## 🚀 Instant Deployment on Vercel
+
+### Option 1: Vercel Web Dashboard (1-Click)
+1. Go to **[vercel.com/new](https://vercel.com/new)**.
+2. Sign in with your GitHub account (**`sharky-123`**).
+3. Import the repository **`food-verse-ai`**.
+4. Vercel automatically detects **Vite** framework (`buildCommand: npm run build`, `outputDirectory: dist`).
+5. Click **Deploy**! In ~30 seconds, your application is live on a global HTTPS URL!
+
+---
+
+## 💻 Local Development
+
+### Run React Frontend (Vite)
+```bash
+npm install
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Run Streamlit Alternative
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 🏗️ Architecture
 
 ```mermaid
 flowchart TD
-    subgraph UI ["User Interface Layer (Streamlit 1.35+)"]
+    subgraph UI ["Modern React 18 + Tailwind UI"]
         T1["Tab 1: Nutrition Audit"]
         T2["Tab 2: Freshness Diagnostic"]
-        T3["Tab 3: Kitchen Hygiene & Safety"]
-        T4["Tab 4: Smart Recipe Coach"]
-        T5["Tab 5: TDEE Meal Planner"]
+        T3["Tab 3: Kitchen Safety"]
+        T4["Tab 4: Recipe Assistant"]
+        T5["Tab 5: Meal Planner"]
+        T6["Tab 6: System Architecture"]
     end
 
-    subgraph Core ["Multimodal AI & Vision Engine (modules/ai_engine.py)"]
-        Router{"Provider Router"}
+    subgraph Core ["aiService.js Routing Engine"]
+        Router{"AI Provider Selector"}
         Gemini["Google Gemini 1.5 Flash/Pro"]
         Groq["Groq LLaMA-3.2 Vision"]
         MockEngine["Standalone Food-Science Simulation Engine"]
     end
 
-    subgraph Processing ["Computer Vision & Contracts Layer"]
-        CV["Pillow / OpenCV Overlays (cv_helpers.py)"]
-        Contracts["Typed JSON Contracts (data_contracts.py)"]
+    subgraph Output ["Visual Overlays & Science Contracts"]
+        Heatmap["Surface Defect Heatmaps"]
+        BBox["PPE & Contamination Bounding Boxes"]
+        TDEE["Mifflin-St Jeor Metabolic Engine"]
     end
 
     UI --> Router
-    Router -->|API Key Provided| Gemini
-    Router -->|Groq Key Provided| Groq
-    Router -->|Demo Mode / Fallback| MockEngine
+    Router -->|API Key| Gemini
+    Router -->|API Key| Groq
+    Router -->|Demo Mode (Default)| MockEngine
 
-    Gemini --> Contracts
-    Groq --> Contracts
-    MockEngine --> Contracts
+    Gemini --> Output
+    Groq --> Output
+    MockEngine --> Output
 
-    Contracts --> CV
-    CV --> UI
-```
-
----
-
-## 🚀 Quickstart & Installation
-
-### 1. Clone or Open Project
-```bash
-cd "C:\Users\Saksham Tomar\.gemini\antigravity\scratch\food-verse-ai"
-```
-
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Launch Application
-```bash
-streamlit run app.py
-```
-
-The app will open automatically in your browser at `http://localhost:8501`.
-
----
-
-## 🔑 Dual-Mode Execution
-
-1. **Standalone Demonstration Mode (Zero API Key Needed):**
-   - Enabled by default in the sidebar.
-   - Provides instant, zero-latency food science evaluations with rich data and preset visual archetypes without requiring external API keys.
-2. **Live Vision APIs:**
-   - Select **Google Gemini** or **Groq** in the sidebar.
-   - Paste your API key to activate live multimodal prompting.
-   - Built-in graceful fallback automatically prevents crashes if rate limits or network interruptions occur.
-
----
-
-## 📦 Directory Structure
-
-```
-food-verse-ai/
-├── app.py                      # Main Streamlit application entry point
-├── config.py                   # App configuration, constants, branding, themes
-├── requirements.txt            # Streamlit Cloud zero-friction dependency list
-├── README.md                   # System documentation & setup guide
-├── modules/
-│   ├── __init__.py
-│   ├── ai_engine.py            # Multimodal AI routing (Gemini, Groq & Demo Fallback)
-│   ├── nutrition_audit.py      # Tab 1: Food Recognition & Nutrition Audit engine
-│   ├── freshness_diagnostic.py # Tab 2: Freshness, Spoilage, Shelf-life & Microbial risk
-│   ├── kitchen_hygiene.py      # Tab 3: Commercial Kitchen Safety & HACCP Compliance
-│   ├── recipe_assistant.py     # Tab 4: Pantry-to-Plate Recipe generator & substitutions
-│   └── meal_planner.py         # Tab 5: BMR/TDEE metabolic calculator, 7-day plan, grocery
-├── assets/
-│   └── styles.css              # Custom styling for UI elements
-└── utils/
-    ├── __init__.py
-    ├── cv_helpers.py           # OpenCV / PIL image processing, annotations, bounding boxes
-    └── data_contracts.py       # Pydantic / JSON schema validator & contracts
+    Output --> UI
 ```
 
 ---
