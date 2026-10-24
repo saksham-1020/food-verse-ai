@@ -1,0 +1,55 @@
+/* Food Verse AI - Vibrant Modern Theme */
+
+/* Metric Card Containers */
+div[data-testid="stMetric"] {
+    background-color: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Metric labels and values */
+div[data-testid="stMetricLabel"] {
+    color: #94A3B8 !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+}
+
+div[data-testid="stMetricValue"] {
+    color: #F8FAFC !important;
+    font-weight: 700 !important;
+}
+
+/* Tabs styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px 8px 0px 0px;
+    padding: 10px 18px;
+    font-weight: 600;
+}
+
+/* Primary Buttons */
+button[kind="primary"] {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+    border: none !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease-in-out;
+}
+
+button[kind="primary"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Custom Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #064E3B 0%, #0F172A 100%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
